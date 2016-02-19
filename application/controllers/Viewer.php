@@ -37,7 +37,7 @@ class Viewer extends Application {
         
         function rate() {
             if (!isset($_POST['action'])) redirect("/");
-            
+
             $id = intval($_POST['idBox']);
             $rate = intval($_POST['rate']);
             
@@ -45,7 +45,7 @@ class Viewer extends Application {
             if ($record != null) {
                 $record->vote_total += $rate;
                 $record->vote_count++;
-                $this->qoutes->update($record);
+                $this->quotes->update($record);
             }
             $response = 'Thanks for voting';
             echo json_encode($response);
